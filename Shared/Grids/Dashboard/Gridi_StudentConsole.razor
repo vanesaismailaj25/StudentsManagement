@@ -1,0 +1,97 @@
+﻿@using StudentsManagement.DAL.Models;
+@using StudentsManagement.Helpers.Mappers;
+
+<DxPopup Visible="@PopUpVisible">
+
+    <HeaderContentTemplate>
+        <div style="color: @(PopUpMessage.Contains("wrong") ? "red" : PopUpMessage.Contains("successfully") ? "green" : "e2e202")">
+            Error
+        </div>
+    </HeaderContentTemplate>
+
+    <BodyContentTemplate>
+        <div style="color: @(PopUpMessage.Contains("wrong") ? "red" : PopUpMessage.Contains("successfully") ? "green" : "e2e202")">
+            @PopUpMessage
+        </div>
+    </BodyContentTemplate>
+
+    <FooterContentTemplate>
+        <DxButton RenderStyle="ButtonRenderStyle.Primary" Text="OK"
+                  Click="@context.CloseCallback" />
+    </FooterContentTemplate>
+
+</DxPopup>
+
+<DxGrid Data="Data"
+        EditModelSaving="OnEditModelSaving"
+        DataItemDeleting="OnDataItemDeleting"
+        KeyFieldName="Id"
+        ShowGroupPanel="true"
+        ShowGroupedColumns="false">
+
+    <Columns>
+        <DxGridCommandColumn />
+        <DxGridDataColumn FieldName="FirstName" />
+        <DxGridDataColumn FieldName="LastName" />
+        <DxGridDataColumn FieldName="DateOfBirth" />
+        <DxGridDataColumn FieldName="Gender" />
+        <DxGridDataColumn FieldName="Email" />
+        <DxGridDataColumn FieldName="PhoneNumber" />
+        <DxGridDataColumn FieldName="StudentYear" />
+        <DxGridDataColumn FieldName="RegistrationYear" />
+        <DxGridDataColumn FieldName="Password" />
+    </Columns>
+
+    <EditFormTemplate Context="editFormContext">
+
+        @{
+            var student = ((Student)editFormContext.EditModel).AS_Students_DTO();
+        }
+
+        <DxFormLayout>
+            <DxFormLayoutItem Caption="First Name">
+                @editFormContext.GetEditor("FirstName")
+                @* <DxTextBox @bind-Text="student.FirstName"/> *@
+            </DxFormLayoutItem>
+
+            <DxFormLayoutItem Caption="Last Name: ">
+                @editFormContext.GetEditor("LastName")
+                @* <DxTextBox @bind-Text="student.LastName" /> *@
+            </DxFormLayoutItem>
+            <DxFormLayoutItem Caption="Date of birth: ">
+                @editFormContext.GetEditor("DateOfBirth")
+                @* <DxDateEdit @bind-Date="student.DateOfBirth" /> *@
+            </DxFormLayoutItem>
+            <DxFormLayoutItem Caption="Gender: ">
+                @editFormContext.GetEditor("Gender")
+                @* <DxComboBox NullText="Gender"
+                @bind-Value="student.Gender"
+                Data="Enum.GetNames(typeof(Gender))" /> *@
+            </DxFormLayoutItem>
+            <DxFormLayoutItem Caption="Email: ">
+                @editFormContext.GetEditor("Email")
+                @* <DxTextBox @bind-Text="student.Email"/> *@
+            </DxFormLayoutItem>
+            <DxFormLayoutItem Caption="Phone number: ">
+                @editFormContext.GetEditor("PhoneNumber")
+                @* <DxTextBox @bind-Text="student.PhoneNumber" /> *@
+            </DxFormLayoutItem>
+            <DxFormLayoutItem Caption="Student year: ">
+                @editFormContext.GetEditor("StudentYear")
+                @* <DxSpinEdit @bind-Value="student.StudentYear"
+                CssClass="cw-320"
+                MinValue="1"
+                MaxValue="5"
+                SizeMode="SizeMode.Small"/> *@
+            </DxFormLayoutItem>
+            <DxFormLayoutItem Caption="Registration year:">
+                @editFormContext.GetEditor("RegistrationYear")
+                @* <DxDateEdit @bind-Date="student.RegistrationYear" /> *@
+            </DxFormLayoutItem>
+            <DxFormLayoutItem Caption="Password: ">
+                @editFormContext.GetEditor("Password")
+                @* <DxTextBox @bind-Text="student.Password" /> *@
+            </DxFormLayoutItem>
+        </DxFormLayout>
+    </EditFormTemplate>
+</DxGrid>

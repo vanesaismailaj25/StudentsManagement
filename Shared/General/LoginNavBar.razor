@@ -1,0 +1,22 @@
+﻿<style>
+
+     .navbar {
+         background-color: #CBC3E3;
+     }
+</style>
+
+<DxMenu Orientation="Orientation.Horizontal"
+        DisplayMode="MenuDisplayMode.Desktop"
+        Title="NavBar Logo"
+        CollapseItemToIconMode="MenuCollapseItemToIconMode.All"
+        CollapseItemsToHamburgerMenu="true"
+        CssClass="navbar">
+
+    <TitleTemplate>
+        <div class="icon-logo" role="img" aria-label="@context"></div>
+    </TitleTemplate>
+
+    <Items>
+        <DxMenuItem Text="Log out" title="Log out" NavigateUrl="/" CssClass="notoggle" IconCssClass="menu-icon-user-profile menu-icon" Name="LogOut" Position="ItemPosition.End" />
+    </Items>
+</DxMenu>

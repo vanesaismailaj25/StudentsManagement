@@ -1,0 +1,45 @@
+﻿@using StudentsManagement.BLL.StudentLogin.Interfaces
+@inject IStudentLoginRepository LoginRepository
+@inject NavigationManager NavigationManager
+
+@layout Layout_Login
+
+<div class="formlogin">
+    <h3>Login</h3>
+    <EditForm Model="@loginForm" Context="EditFormContext" OnValidSubmit="LoginRequest">
+        <DxFormLayout>
+            <DxFormLayoutItem Caption="E-mail" CaptionPosition="CaptionPosition.Vertical" ColSpanMd="12">
+                <DxTextBox @bind-Text="loginForm.Email"
+                           NullText="Input your email"
+                           SizeMode="SizeMode.Medium"
+                           ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto">
+                </DxTextBox>
+                <ValidationMessage For="(() => loginForm.Email)"></ValidationMessage>
+            </DxFormLayoutItem>
+
+            <DxFormLayoutItem Caption="Password" CaptionPosition="CaptionPosition.Vertical" ColSpanMd="12">
+                <DxTextBox @bind-Text="loginForm.Password"
+                           NullText="Input your password"
+                           Password="true"
+                           SizeMode="SizeMode.Medium"
+                           ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto">
+                </DxTextBox>
+                <ValidationMessage For="(() => loginForm.Password)"></ValidationMessage>
+            </DxFormLayoutItem>
+
+            <div class="button-style">
+                <DxButton Click="LoginRequest"
+                          SubmitFormOnClick="true"
+                          RenderStyle="ButtonRenderStyle.Primary"
+                          RenderStyleMode="ButtonRenderStyleMode.Outline"
+                          SizeMode="SizeMode.Medium"
+                          Text="Log in">
+                </DxButton>
+            </div>
+
+            <div class="signup">
+                <p>Not a member? <a href="/register"> Sign up now! </a> </p>
+            </div>
+        </DxFormLayout>
+    </EditForm>
+</div>

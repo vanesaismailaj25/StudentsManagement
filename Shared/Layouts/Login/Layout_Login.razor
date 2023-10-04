@@ -1,0 +1,47 @@
+﻿@inherits LayoutComponentBase
+
+@* <PageTitle> Log In </PageTitle>
+
+<div class="page">
+    <main>
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>
+
+<Footer/> *@
+<PageTitle> Log In </PageTitle>
+
+<DxGridLayout>
+    <Rows>
+        <DxGridLayoutRow Height="10vh"/>
+        <DxGridLayoutRow Height="80vh"/>
+        <DxGridLayoutRow Height="10vh"/>
+    </Rows>
+
+    <Columns>
+        <DxGridLayoutColumn Width="100%"/>
+    </Columns>
+
+    <Items>
+
+        <DxGridLayoutItem Row="0" Column="0">
+            <Template>
+                <NavBar/>
+            </Template>
+        </DxGridLayoutItem>
+
+        <DxGridLayoutItem Row="1" Column="0">
+            <Template>
+                @Body
+            </Template>
+        </DxGridLayoutItem>
+
+        <DxGridLayoutItem Row="2" Column="0">
+            <Template>
+                <Footer/>
+            </Template>
+        </DxGridLayoutItem>
+    </Items>
+</DxGridLayout>
