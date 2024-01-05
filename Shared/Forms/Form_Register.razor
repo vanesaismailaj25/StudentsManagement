@@ -6,84 +6,95 @@
 
 @layout Layout_Register
 
+<img class="image" src="/images/loginwpaper.jpg" alt="Book wallpaper" />
+
 <div class="register">
-    <h3> Register </h3>
+    <h5> Register </h5>
     <EditForm Model="@studentRegister" Context="EditFormContext" OnValidSubmit="RegisterStudent">
-    <DxFormLayout>
-        <DxFormLayoutItem Caption="First name" CaptionPosition="CaptionPosition.Vertical" ColSpanMd="12">
-            <DxTextBox NullText="First name"
-                       @bind-Text="@studentRegister.FirstName"
-                       SizeMode="SizeMode.Small"
-                       ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto" />
-        </DxFormLayoutItem>
+        <DxFormLayout CssClass="w-100">
+            <DxFormLayoutItem Caption="First name" CaptionPosition="CaptionPosition.Vertical" ColSpanMd="6" CssClass="textcolor">
+                <DxTextBox NullText="First name"
+                           @bind-Text="@studentRegister.FirstName"
+                           SizeMode="SizeMode.Small"
+                           ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto" />
+            </DxFormLayoutItem>
 
-        <DxFormLayoutItem Caption="Last name" CaptionPosition="CaptionPosition.Vertical" ColSpanMd="12">
-            <DxTextBox NullText="Last name"
-                        @bind-Text="@studentRegister.LastName"
-                       SizeMode="SizeMode.Small"
-                       ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto" />
-        </DxFormLayoutItem>
+            <DxFormLayoutItem Caption="Last name" CaptionPosition="CaptionPosition.Vertical" ColSpanMd="6" CssClass="textcolor">
+                <DxTextBox NullText="Last name"
+                           @bind-Text="@studentRegister.LastName"
+                           SizeMode="SizeMode.Small"
+                           ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto" />
+            </DxFormLayoutItem>
 
-        <DxFormLayoutItem Caption="Date of birth" CaptionPosition="CaptionPosition.Vertical" ColSpanMd="12">
-            <DxDateEdit @bind-Date="@studentRegister.DateOfBirth"
-                        CssClass="cw-320"                        
-                        SizeMode="SizeMode.Small"/>
-        </DxFormLayoutItem>
+            <DxFormLayoutItem Caption="Date of birth" CaptionPosition="CaptionPosition.Vertical" ColSpanMd="6" CssClass="textcolor">
+                <DxDateEdit @bind-Date="@studentRegister.DateOfBirth"
+                            CssClass="cw-320"
+                            SizeMode="SizeMode.Small" />
+            </DxFormLayoutItem>
 
-        <DxFormLayoutItem Caption="Gender" CaptionPosition="CaptionPosition.Vertical" ColSpanMd="12">
-            <DxComboBox NullText="Gender"
-                        @bind-Value="@studentRegister.Gender"
-                        ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto"
-                        Data="Enum.GetNames(typeof(Gender))"
-                        ShowValidationIcon="true"
-                        SizeMode="SizeMode.Small"/>
-        </DxFormLayoutItem>
+            <DxFormLayoutItem Caption="Gender" CaptionPosition="CaptionPosition.Vertical" ColSpanMd="6" CssClass="textcolor">
+                <DxComboBox NullText="Gender"
+                            @bind-Value="@studentRegister.Gender"
+                            ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto"
+                            Data="Enum.GetNames(typeof(Gender))"
+                            ShowValidationIcon="true"
+                            SizeMode="SizeMode.Small" />
+            </DxFormLayoutItem>
 
-        <DxFormLayoutItem Caption="E-mail" CaptionPosition="CaptionPosition.Vertical" ColSpanMd="12">
-            <DxTextBox NullText="E-mail"
-                        @bind-Text="@studentRegister.Email"
-                       SizeMode="SizeMode.Small"
-                       ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto" />
-        </DxFormLayoutItem>
+            <DxFormLayoutItem Caption="E-mail" CaptionPosition="CaptionPosition.Vertical" ColSpanMd="6" CssClass="textcolor">
+                <DxTextBox NullText="E-mail"
+                           @bind-Text="@studentRegister.Email"
+                           SizeMode="SizeMode.Small"
+                           ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto" />
+            </DxFormLayoutItem>
 
-        <DxFormLayoutItem Caption="Phone number" CaptionPosition="CaptionPosition.Vertical" ColSpanMd="12">
-            <DxTextBox NullText="Phone number"
-                        @bind-Text="@studentRegister.PhoneNumber"
-                       SizeMode="SizeMode.Small"
-                       ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto" />
-        </DxFormLayoutItem>
+            <DxFormLayoutItem Caption="Phone number" CaptionPosition="CaptionPosition.Vertical" ColSpanMd="6" CssClass="textcolor">
+                <DxTextBox NullText="Phone number"
+                           @bind-Text="@studentRegister.PhoneNumber"
+                           SizeMode="SizeMode.Small"
+                           ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto" />
+            </DxFormLayoutItem>
 
-        <DxFormLayoutItem Caption="Student year" CaptionPosition="CaptionPosition.Vertical" ColSpanMd="12">
-            <DxSpinEdit @bind-Value="@studentRegister.StudentYear"
-                        CssClass="cw-320"
-                        MinValue="1"
-                        MaxValue="5" 
-                        SizeMode="SizeMode.Small"/>
-        </DxFormLayoutItem>
+            <DxFormLayoutItem Caption="Student year" CaptionPosition="CaptionPosition.Vertical" ColSpanMd="6" CssClass="textcolor">
+                <DxSpinEdit @bind-Value="@studentRegister.StudentYear"
+                            CssClass="cw-320"
+                            MinValue="1"
+                            MaxValue="5"
+                            SizeMode="SizeMode.Small" />
+            </DxFormLayoutItem>
 
-        <DxFormLayoutItem Caption="Registration year" CaptionPosition="CaptionPosition.Vertical" ColSpanMd="12">
-            <DxDateEdit @bind-Date="@studentRegister.RegistrationYear"
-                        CssClass="cw-320" 
-                        SizeMode="SizeMode.Small"/>
-        </DxFormLayoutItem>
+            <DxFormLayoutItem Caption="Registration year" CaptionPosition="CaptionPosition.Vertical" ColSpanMd="6" CssClass="textcolor">
+                <DxDateEdit @bind-Date="@studentRegister.RegistrationYear"
+                            CssClass="cw-320"
+                            SizeMode="SizeMode.Small" />
+            </DxFormLayoutItem>
 
-        <DxFormLayoutItem Caption="Password" CaptionPosition="CaptionPosition.Vertical" ColSpanMd="12">
-            <DxTextBox NullText="Password"
-                       @bind-Text="@studentRegister.Password"
-                       Password="true"
-                       SizeMode="SizeMode.Small"
-                       ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto" />
-        </DxFormLayoutItem>
+            <DxFormLayoutItem Caption="Password" CaptionPosition="CaptionPosition.Vertical" ColSpanMd="12" CssClass="textcolor">
+                <DxTextBox NullText="Password"
+                           @bind-Text="@studentRegister.Password"
+                           Password="true"
+                           SizeMode="SizeMode.Small"
+                           ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto" />
+            </DxFormLayoutItem>
 
-        <div class="button-style">
-            <DxButton Click="RegisterStudent"
-                      SubmitFormOnClick="true"
-                      RenderStyle="ButtonRenderStyle.Primary"
-                      RenderStyleMode="ButtonRenderStyleMode.Outline"
-                      SizeMode="SizeMode.Small"
-                      Text="Register">
-            </DxButton>
-        </div>
-    </DxFormLayout>
+            @if (IsInvalidRegister)
+            {
+                <p class="errormessage"> Please fill in all the empty textboxes! </p>
+            }
+
+            <div class="button-style">
+                <DxButton Click="RegisterStudent"
+                          SubmitFormOnClick="true"
+                          RenderStyle="ButtonRenderStyle.Primary"
+                          RenderStyleMode="ButtonRenderStyleMode.Outline"
+                          SizeMode="SizeMode.Small"
+                          Text="Register">
+                </DxButton>
+            </div>
+
+            <div class="login">
+                <p>Do you already have an account?<a href="/login"> Log in here! </a> </p>
+            </div>
+        </DxFormLayout>
     </EditForm>
 </div>

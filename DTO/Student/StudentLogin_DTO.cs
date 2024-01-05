@@ -6,10 +6,10 @@ namespace StudentsManagement.DTO.Student
     {
         [EmailAddress]
         [Required(ErrorMessage = "Username should not be empty!")]
-        public string Email { get; set; }
+        public string Email { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "Password should not be empty!")]
         [DataType(DataType.Password)]
-        public string Password { get; set; }
+        public string Password { get; set; } = string.Empty;
     }
 }

@@ -1,8 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using StudentsManagement.BLL.Repository.Implementation;
 using StudentsManagement.BLL.Repository.Interfaces;
-using StudentsManagement.BLL.StudentLogin.Implementation;
-using StudentsManagement.BLL.StudentLogin.Interfaces;
 using StudentsManagement.Helpers.DbHelpers;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,8 +14,6 @@ builder.Services.AddDbContext<StudentsManagementContext>(options =>
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddTransient<IStudentRepository, StudentRepository>();
-builder.Services.AddScoped<IStudentLoginRepository, StudentLoginRepository>();
-
 
 builder.Services.AddDevExpressBlazor();
 

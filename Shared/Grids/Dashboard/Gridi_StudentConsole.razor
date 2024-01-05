@@ -5,7 +5,7 @@
 
     <HeaderContentTemplate>
         <div style="color: @(PopUpMessage.Contains("wrong") ? "red" : PopUpMessage.Contains("successfully") ? "green" : "e2e202")">
-            Error
+            Message
         </div>
     </HeaderContentTemplate>
 
@@ -56,41 +56,27 @@
 
             <DxFormLayoutItem Caption="Last Name: ">
                 @editFormContext.GetEditor("LastName")
-                @* <DxTextBox @bind-Text="student.LastName" /> *@
             </DxFormLayoutItem>
             <DxFormLayoutItem Caption="Date of birth: ">
                 @editFormContext.GetEditor("DateOfBirth")
-                @* <DxDateEdit @bind-Date="student.DateOfBirth" /> *@
             </DxFormLayoutItem>
             <DxFormLayoutItem Caption="Gender: ">
                 @editFormContext.GetEditor("Gender")
-                @* <DxComboBox NullText="Gender"
-                @bind-Value="student.Gender"
-                Data="Enum.GetNames(typeof(Gender))" /> *@
             </DxFormLayoutItem>
             <DxFormLayoutItem Caption="Email: ">
                 @editFormContext.GetEditor("Email")
-                @* <DxTextBox @bind-Text="student.Email"/> *@
             </DxFormLayoutItem>
             <DxFormLayoutItem Caption="Phone number: ">
                 @editFormContext.GetEditor("PhoneNumber")
-                @* <DxTextBox @bind-Text="student.PhoneNumber" /> *@
             </DxFormLayoutItem>
             <DxFormLayoutItem Caption="Student year: ">
                 @editFormContext.GetEditor("StudentYear")
-                @* <DxSpinEdit @bind-Value="student.StudentYear"
-                CssClass="cw-320"
-                MinValue="1"
-                MaxValue="5"
-                SizeMode="SizeMode.Small"/> *@
             </DxFormLayoutItem>
             <DxFormLayoutItem Caption="Registration year:">
                 @editFormContext.GetEditor("RegistrationYear")
-                @* <DxDateEdit @bind-Date="student.RegistrationYear" /> *@
             </DxFormLayoutItem>
             <DxFormLayoutItem Caption="Password: ">
                 @editFormContext.GetEditor("Password")
-                @* <DxTextBox @bind-Text="student.Password" /> *@
             </DxFormLayoutItem>
         </DxFormLayout>
     </EditFormTemplate>
