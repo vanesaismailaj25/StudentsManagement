@@ -5,7 +5,8 @@ namespace StudentsManagement.Shared.Forms;
 public partial class Form_Login
 {
     private StudentLogin_DTO loginForm = new StudentLogin_DTO();
-    
+    public bool IsInvalidLogin { get; set; }
+
     protected async Task LoginRequest()
     {
         try
@@ -17,7 +18,7 @@ public partial class Form_Login
             }
             else
             {
-                NavigationManager.NavigateTo("/error");
+                IsInvalidLogin = true;
             }
         }
         catch (Exception ex)

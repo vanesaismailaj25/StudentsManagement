@@ -1,7 +1,6 @@
 ﻿<style>
-
      .navbar {
-         background-color: #CBC3E3;
+        background-color: #c7b8a1;
      }
 </style>
 
@@ -17,6 +16,10 @@
     </TitleTemplate>
 
     <Items>
-        <DxMenuItem Text="Log out" title="Log out" NavigateUrl="/" CssClass="notoggle" IconCssClass="menu-icon-user-profile menu-icon" Name="LogOut" Position="ItemPosition.End" />
+        <DxMenuItem Text="My Profile" title="My Profile" NavigateUrl="/loggedStudent" CssClass="notoggle" IconCssClass="menu-icon-user-profile menu-icon" Name="MyProfile" Position="ItemPosition.End" />
+    </Items>
+
+    <Items>
+        <DxMenuItem Text="Log out" title="Log out" NavigateUrl="/login" CssClass="notoggle" IconCssClass="menu-icon-user-profile menu-icon" Name="LogOut" Position="ItemPosition.End" />
     </Items>
 </DxMenu>

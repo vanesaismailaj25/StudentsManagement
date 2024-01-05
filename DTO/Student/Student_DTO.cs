@@ -11,25 +11,25 @@ namespace StudentsManagement.DTO.Student
 
         [Required]
         [StringLength(50)]
-        public string FirstName { get; set; } 
+        public string FirstName { get; set; } = string.Empty;
 
         [Required]
         [StringLength(50)]
-        public string LastName { get; set; } 
+        public string LastName { get; set; } = string.Empty;
 
         [Required,DataType(DataType.Date)]
-        public DateTime DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; } 
 
         [Required]
         public Gender Gender { get; set; }
 
-        [Required]      
+        [Required]
         [DataType(DataType.EmailAddress)]
-        public string Email { get; set; } 
+        public string Email { get; set; } = string.Empty;
 
         [Required]
         [DataType(DataType.PhoneNumber)]
-        public string PhoneNumber { get; set; } 
+        public string PhoneNumber { get; set; } = string.Empty;
 
         [Required]
         public int StudentYear { get; set; }
@@ -38,6 +38,6 @@ namespace StudentsManagement.DTO.Student
         public DateTime RegistrationYear { get; set; }
 
         [Required]
-        public string Password { get; set; }
+        public string Password { get; set; } = string.Empty;
     }
 }

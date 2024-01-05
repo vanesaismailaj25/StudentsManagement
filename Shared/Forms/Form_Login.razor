@@ -1,32 +1,41 @@
-﻿@using StudentsManagement.BLL.StudentLogin.Interfaces
-@inject IStudentLoginRepository LoginRepository
+﻿@using StudentsManagement.BLL.Repository.Interfaces
+@inject IStudentRepository LoginRepository
 @inject NavigationManager NavigationManager
 
 @layout Layout_Login
+
+<img class="image" src="/images/loginwpaper.jpg" alt="Book wallpaper" />
 
 <div class="formlogin">
     <h3>Login</h3>
     <EditForm Model="@loginForm" Context="EditFormContext" OnValidSubmit="LoginRequest">
         <DxFormLayout>
-            <DxFormLayoutItem Caption="E-mail" CaptionPosition="CaptionPosition.Vertical" ColSpanMd="12">
+            <DxFormLayoutItem Caption="E-mail" CaptionPosition="CaptionPosition.Vertical" ColSpanMd="12" CssClass="textcolor">
                 <DxTextBox @bind-Text="loginForm.Email"
                            NullText="Input your email"
                            SizeMode="SizeMode.Medium"
+                           CssClass="input"
                            ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto">
                 </DxTextBox>
                 <ValidationMessage For="(() => loginForm.Email)"></ValidationMessage>
             </DxFormLayoutItem>
 
-            <DxFormLayoutItem Caption="Password" CaptionPosition="CaptionPosition.Vertical" ColSpanMd="12">
+            <DxFormLayoutItem Caption="Password" CaptionPosition="CaptionPosition.Vertical" ColSpanMd="12" CssClass="textcolor">
                 <DxTextBox @bind-Text="loginForm.Password"
                            NullText="Input your password"
                            Password="true"
                            SizeMode="SizeMode.Medium"
+                           CssClass="input"
                            ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto">
                 </DxTextBox>
                 <ValidationMessage For="(() => loginForm.Password)"></ValidationMessage>
             </DxFormLayoutItem>
 
+            @if (IsInvalidLogin)
+            {
+                <p class="errormessage"> Invalid credentials! Please try again! </p>
+            }
+            
             <div class="button-style">
                 <DxButton Click="LoginRequest"
                           SubmitFormOnClick="true"
@@ -41,5 +50,6 @@
                 <p>Not a member? <a href="/register"> Sign up now! </a> </p>
             </div>
         </DxFormLayout>
+
     </EditForm>
 </div>

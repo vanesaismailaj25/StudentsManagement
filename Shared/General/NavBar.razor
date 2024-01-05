@@ -1,28 +1,27 @@
 ﻿<style>
 
     .navbar {
-        background-color: #CBC3E3;
+        background-color: #c7b8a1;
     }
 </style>
 
-<DxMenu Orientation="Orientation.Horizontal"
-        DisplayMode="MenuDisplayMode.Desktop"
-        Title="NavBar Logo"
-        CollapseItemToIconMode="MenuCollapseItemToIconMode.All"
-        CollapseItemsToHamburgerMenu="true"
-        CssClass="navbar">
+    <DxMenu Orientation="Orientation.Horizontal"
+            DisplayMode="MenuDisplayMode.Desktop"
+            Title="NavBar Logo"
+            CollapseItemToIconMode="MenuCollapseItemToIconMode.All"
+            CollapseItemsToHamburgerMenu="true"
+            CssClass="navbar">
 
-    <TitleTemplate>
-        <div class="icon-logo" role="img" aria-label="@context"></div>
-    </TitleTemplate>
+        <TitleTemplate>
+            <div class="icon-logo" role="img" aria-label="@context"></div>
+        </TitleTemplate>
 
-    <Items>
-        <DxMenuItem Text="Home" IconCssClass="menu-icon-home menu-icon"/>
+        <Items>
+            <DxMenuItem Text="Home" title="Home" NavigateUrl="/" CssClass="notoggle" IconCssClass="menu-icon-home menu-icon" Name="Home" Position="ItemPosition.Start" />
 
-        @* <DxMenuItem Text="Students Grid" title="Students Grid" NavigateUrl="/studentpage" CssClass="notoggle" IconCssClass="menu-icon-user-profile menu-icon" Name="Students Grid" Position="ItemPosition.End"/> *@
+             <DxMenuItem Text="Log in" title="Log in" NavigateUrl="/login" CssClass="notoggle" IconCssClass="menu-icon-user-profile menu-icon" Name="LogIn" Position="ItemPosition.End" />
 
-        <DxMenuItem Text="Log in" title="Log in" NavigateUrl="/login" CssClass="notoggle" IconCssClass="menu-icon-user-profile menu-icon" Name="LogIn" Position="ItemPosition.End"/>
-            
-        <DxMenuItem Text="Register" title="Register" NavigateUrl="/register" CssClass="notoggle" IconCssClass="menu-icon-user-profile menu-icon" Name="Register" Position="ItemPosition.End"/>
-    </Items>
-</DxMenu>
+            <DxMenuItem Text="Register" title="Register" NavigateUrl="/register" CssClass="notoggle" IconCssClass="menu-icon-user-profile menu-icon" Name="Register" Position="ItemPosition.End" />
+        </Items>
+    </DxMenu>
+
