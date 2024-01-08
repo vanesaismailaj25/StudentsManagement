@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StudentsManagement.Helpers.DbHelpers;
 
@@ -11,9 +12,11 @@ using StudentsManagement.Helpers.DbHelpers;
 namespace StudentsManagement.Migrations
 {
     [DbContext(typeof(StudentsManagementContext))]
-    partial class StudentsManagementContextModelSnapshot : ModelSnapshot
+    [Migration("20240108122247_test")]
+    partial class test
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -170,53 +173,6 @@ namespace StudentsManagement.Migrations
                             Credits = 4,
                             Name = "GIS"
                         });
-                });
-
-            modelBuilder.Entity("StudentsManagement.DAL.Models.SubjectStudents", b =>
-                {
-                    b.Property<int>("SubjectId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("StudentId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Grade")
-                        .HasColumnType("int");
-
-                    b.HasKey("SubjectId", "StudentId");
-
-                    b.HasIndex("StudentId");
-
-                    b.ToTable("SubjectStudents");
-                });
-
-            modelBuilder.Entity("StudentsManagement.DAL.Models.SubjectStudents", b =>
-                {
-                    b.HasOne("StudentsManagement.DAL.Models.Student", "Student")
-                        .WithMany("SubjectStudents")
-                        .HasForeignKey("StudentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("StudentsManagement.DAL.Models.Subject", "Subject")
-                        .WithMany("SubjectStudents")
-                        .HasForeignKey("SubjectId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Student");
-
-                    b.Navigation("Subject");
-                });
-
-            modelBuilder.Entity("StudentsManagement.DAL.Models.Student", b =>
-                {
-                    b.Navigation("SubjectStudents");
-                });
-
-            modelBuilder.Entity("StudentsManagement.DAL.Models.Subject", b =>
-                {
-                    b.Navigation("SubjectStudents");
                 });
 #pragma warning restore 612, 618
         }

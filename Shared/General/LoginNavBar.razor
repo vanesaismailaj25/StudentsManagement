@@ -4,7 +4,7 @@
      }
 </style>
 
-<DxMenu Orientation="Orientation.Horizontal"
+@* <DxMenu Orientation="Orientation.Horizontal"
         DisplayMode="MenuDisplayMode.Desktop"
         Title="NavBar Logo"
         CollapseItemToIconMode="MenuCollapseItemToIconMode.All"
@@ -21,5 +21,41 @@
 
     <Items>
         <DxMenuItem Text="Log out" title="Log out" NavigateUrl="/login" CssClass="notoggle" IconCssClass="menu-icon-user-profile menu-icon" Name="LogOut" Position="ItemPosition.End" />
+    </Items>
+</DxMenu>
+ *@
+
+<DxMenu Orientation="Orientation.Horizontal"
+        DisplayMode="MenuDisplayMode.Desktop"
+        Title="NavBar Logo"
+        CollapseItemToIconMode="MenuCollapseItemToIconMode.All"
+        CollapseItemsToHamburgerMenu="true"
+        CssClass="navbar">
+    <Items>
+        <DxMenuItem Text="Home" IconCssClass="menu-icon-home menu-icon">
+        </DxMenuItem>
+        <DxMenuItem Text="Item2">
+        </DxMenuItem>
+        <DxMenuItem CssClass="notoggle" Position="ItemPosition.End">
+            <TextTemplate>
+                <div class="menu-icon-user-profile menu-icon" /> 
+            </TextTemplate>
+            <SubMenuTemplate>
+                <div class="w-100 user-profile">
+                    <div class="flex-column align-items-center justify-content-center">
+                        <div class="logo-container d-flex align-items-center justify-content-center">
+                            <div class="menu-icon-user-profile menu-icon menu-icon-large" />
+                        </div>
+                        <div class="user-name-container bm-3 mb-2">
+                            <div class="tm08 text-center"> Hello, </div>
+                            <div class="text-center"> @* ketu do te vendosim username ne baze te atij te loguar *@ User </div>
+                        </div>
+                        <div class="d-flex justify-content-center log-off-button">
+                            <DxButton Text="Log out" RenderStyle="@ButtonRenderStyle.Secondary" NavigateUrl="/login"></DxButton>
+                        </div>
+                    </div>
+                </div>
+            </SubMenuTemplate>
+        </DxMenuItem>
     </Items>
 </DxMenu>
