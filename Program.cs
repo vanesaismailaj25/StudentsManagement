@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using StudentsManagement.BLL.Repository.Implementation;
-using StudentsManagement.BLL.Repository.Interfaces;
 using StudentsManagement.Helpers.DbHelpers;
+using StudentsManagement.BLL.Repository.Interfaces;
+using StudentsManagement.BLL.Repository.Implementation;
 
 var builder = WebApplication.CreateBuilder(args);
 

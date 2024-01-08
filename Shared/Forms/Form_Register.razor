@@ -27,9 +27,10 @@
             </DxFormLayoutItem>
 
             <DxFormLayoutItem Caption="Date of birth" CaptionPosition="CaptionPosition.Vertical" ColSpanMd="6" CssClass="textcolor">
-                <DxDateEdit @bind-Date="@studentRegister.DateOfBirth"
+                 <DxDateEdit @bind-Date="@DateOfBirth"
+                            FirstDayOfWeek="DayOfWeek.Monday"
                             CssClass="cw-320"
-                            SizeMode="SizeMode.Small" />
+                            SizeMode="SizeMode.Small" /> 
             </DxFormLayoutItem>
 
             <DxFormLayoutItem Caption="Gender" CaptionPosition="CaptionPosition.Vertical" ColSpanMd="6" CssClass="textcolor">
@@ -63,8 +64,8 @@
                             SizeMode="SizeMode.Small" />
             </DxFormLayoutItem>
 
-            <DxFormLayoutItem Caption="Registration year" CaptionPosition="CaptionPosition.Vertical" ColSpanMd="6" CssClass="textcolor">
-                <DxDateEdit @bind-Date="@studentRegister.RegistrationYear"
+            <DxFormLayoutItem Caption="Registration date" CaptionPosition="CaptionPosition.Vertical" ColSpanMd="6" CssClass="textcolor">
+                <DxDateEdit @bind-Date="@DateOfRegistration"
                             CssClass="cw-320"
                             SizeMode="SizeMode.Small" />
             </DxFormLayoutItem>

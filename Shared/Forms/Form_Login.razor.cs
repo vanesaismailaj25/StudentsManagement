@@ -14,7 +14,7 @@ public partial class Form_Login
             var result = await LoginRepository.Login(loginForm);
             if (result)
             {
-                NavigationManager.NavigateTo("/studentpage");
+                NavigationManager.NavigateTo("/personal-profile");
             }
             else
             {

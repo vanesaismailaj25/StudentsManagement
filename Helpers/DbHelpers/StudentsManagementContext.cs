@@ -14,6 +14,7 @@ namespace StudentsManagement.Helpers.DbHelpers
         {
         }
         public DbSet<Student> Students { get; set; }
+        public DbSet<Subject> Subjects { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -23,7 +24,7 @@ namespace StudentsManagement.Helpers.DbHelpers
             new Student
             {
                 Id = 1,
-                FirstName = "Vanesa",
+                Name = "Vanesa",
                 LastName = "Ismailaj",
                 DateOfBirth = new DateTime(2001, 07, 25),
                 Gender = Gender.Female,
@@ -36,7 +37,7 @@ namespace StudentsManagement.Helpers.DbHelpers
             new Student
             {
                 Id = 2,
-                FirstName = "Mary",
+                Name = "Mary",
                 LastName = "John",
                 DateOfBirth = new DateTime(2003, 03, 22),
                 Gender = Gender.Female,
@@ -49,7 +50,7 @@ namespace StudentsManagement.Helpers.DbHelpers
             new Student
             {
                 Id = 3,
-                FirstName = "Elon",
+                Name = "Elon",
                 LastName = "Smith",
                 DateOfBirth = new DateTime(2004, 02, 24),
                 Gender = Gender.Male,
@@ -60,6 +61,53 @@ namespace StudentsManagement.Helpers.DbHelpers
                 Password = "elon123$"
             }
           );
+
+            modelBuilder.Entity<Subject>().HasData(
+                new Subject
+                {
+                    Id = 1,
+                    Name = "Operating systems",
+                    Credits = 10
+                },
+                new Subject
+                {
+                    Id = 2,
+                    Name = "Database management systems",
+                    Credits = 10
+                },
+                new Subject
+                {
+                    Id = 3,
+                    Name = "Computer networks",
+                    Credits = 10
+                },
+                new Subject
+                {
+                    Id = 4,
+                    Name = "Web programming",
+                    Credits = 10
+                },
+                new Subject
+                {
+                    Id = 5,
+                    Name = "Theory of computation and automata theory",
+                    Credits = 5
+                },
+                new Subject
+                {
+                    Id = 6,
+                    Name = "Software engineering",
+                    Credits = 4,
+                },
+                new Subject
+                {
+                    Id = 7,
+                    Name = "GIS",
+                    Credits = 4
+                }
+                );
+
+            modelBuilder.Entity<SubjectStudents>().HasKey(ss => new { ss.SubjectId, ss.StudentId });
         }
     }
 }

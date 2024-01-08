@@ -2,7 +2,6 @@
 using StudentsManagement.DTO.Student;
 
 namespace StudentsManagement.Helpers.Mappers;
-
 public static class StudentsMapper
 {
     public static Student_DTO AS_Students_DTO(this Student student)
@@ -10,7 +9,7 @@ public static class StudentsMapper
         return new Student_DTO
         {
             Id = student.Id,
-            FirstName = student.FirstName,
+            FirstName = student.Name,
             LastName = student.LastName,
             DateOfBirth = student.DateOfBirth,
             Gender = student.Gender,
@@ -27,7 +26,7 @@ public static class StudentsMapper
         return new Student
         {
             Id = student_DTO.Id,
-            FirstName = student_DTO.FirstName,
+            Name = student_DTO.FirstName,
             LastName = student_DTO.LastName,
             DateOfBirth = student_DTO.DateOfBirth,
             Gender = student_DTO.Gender,
@@ -52,7 +51,7 @@ public static class StudentsMapper
     {
         student.DateOfBirth = studentDto.DateOfBirth;
         student.PhoneNumber = studentDto.PhoneNumber;
-        student.FirstName = studentDto.FirstName;
+        student.Name = studentDto.FirstName;
         student.LastName = studentDto.LastName;
         student.Gender = studentDto.Gender;
         student.Email = studentDto.Email;

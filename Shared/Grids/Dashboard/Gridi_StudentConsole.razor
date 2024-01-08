@@ -31,7 +31,7 @@
 
     <Columns>
         <DxGridCommandColumn />
-        <DxGridDataColumn FieldName="FirstName" />
+        <DxGridDataColumn FieldName="Name" />
         <DxGridDataColumn FieldName="LastName" />
         <DxGridDataColumn FieldName="DateOfBirth" />
         <DxGridDataColumn FieldName="Gender" />
@@ -50,7 +50,7 @@
 
         <DxFormLayout>
             <DxFormLayoutItem Caption="First Name">
-                @editFormContext.GetEditor("FirstName")
+                @editFormContext.GetEditor("Name")
                 @* <DxTextBox @bind-Text="student.FirstName"/> *@
             </DxFormLayoutItem>
 

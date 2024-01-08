@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StudentsManagement.Helpers.DbHelpers;
 
@@ -11,9 +12,11 @@ using StudentsManagement.Helpers.DbHelpers;
 namespace StudentsManagement.Migrations
 {
     [DbContext(typeof(StudentsManagementContext))]
-    partial class StudentsManagementContextModelSnapshot : ModelSnapshot
+    [Migration("20240108130136_newTableSubjectStudents")]
+    partial class newTableSubjectStudents
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -181,6 +184,9 @@ namespace StudentsManagement.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("Grade")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Id")
                         .HasColumnType("int");
 
                     b.HasKey("SubjectId", "StudentId");

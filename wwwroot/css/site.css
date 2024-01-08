@@ -152,16 +152,6 @@ a, .btn-link {
     text-align: center;
 }
 
-/*.button-style {
-    border: #CBC3E3;
-    color: white;
-}
-
-.button-style:hover {
-    border: #CBC3E3;
-    color: white;
-}*/
-
 button {
     --bs-primary: #c7b8a1;
 }
@@ -176,4 +166,30 @@ button {
 .errormessage {
     color: #594935;
     margin: 20px 55px 0px;
+}
+/*extra*/
+
+.user-profile .logo-container {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.user-profile .log-off-btn {
+    padding-top: 0.815rem;
+    padding-bottom: 0.815rem;
+    border-top: 1px solid #e5e5e5;
+}
+
+.menu-icon-user-profile {
+    opacity: 0.75;
+}
+
+.user-profile .menu-icon-user-profile {
+    opacity: 0.25;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.user-name-container .tm-8 {
+    opacity: 0.8;
 }
