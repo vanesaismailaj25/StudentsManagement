@@ -34,6 +34,18 @@ public class SubjectRepository : ISubjectRepository
     public async Task<IEnumerable<Subject>> GetAllSubjectsAsync()
     {
         var allSubjects = await context.Subjects.ToListAsync();
+        //var allSubjects = from s in context.Subjects
+        //                  join ss in context.SubjectStudents on s.Id equals ss.SubjectId
+        //                  join st in context.Students on ss.StudentId equals st.Id
+        //                  select new
+        //                  {
+        //                      SubjectId = s.Id,
+        //                      SubjectName = s.Name,
+        //                      Credits = s.Credits,
+        //                      Grade = ss.Grade,
+        //                      StudentName = st.Name
+        //                  };
+        
         return allSubjects;
     }
 

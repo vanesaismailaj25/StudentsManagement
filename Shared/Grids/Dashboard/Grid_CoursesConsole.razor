@@ -1,0 +1,22 @@
+﻿<DxGrid Data="Data"
+        KeyFieldName="Id"
+        ShowGroupPanel="true"
+        ShowGroupedColumns="false">
+
+    <Columns>
+            <DxGridDataColumn FieldName="Id" Width="50px"/>
+            <DxGridDataColumn FieldName="Name" Width="250px" />
+            <DxGridDataColumn FieldName="Credits" Width="100px" SortOrder="GridColumnSortOrder.Ascending"/>
+           @*  <DxGridDataColumn FieldName="Grade" Width="100px" SortOrder="GridColumnSortOrder.Ascending" /> *@
+    </Columns>
+
+    <TotalSummary>
+        <DxGridSummaryItem FieldName="Credits"
+                            SummaryType="GridSummaryItemType.Sum"
+                            ValueDisplayFormat="D"/>
+        @* <DxGridSummaryItem FieldName="Grade"
+                            SummaryType="GridSummaryItemType.Avg"
+                            ValueDisplayFormat="D" /> *@
+    </TotalSummary>
+    
+</DxGrid>

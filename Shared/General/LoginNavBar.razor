@@ -1,44 +1,27 @@
-﻿<style>
-     .navbar {
+﻿@inject IStudentRepository StudentRepository
+
+<style>
+    .navbar {
         background-color: #c7b8a1;
-     }
+    }
 </style>
-
-@* <DxMenu Orientation="Orientation.Horizontal"
-        DisplayMode="MenuDisplayMode.Desktop"
-        Title="NavBar Logo"
-        CollapseItemToIconMode="MenuCollapseItemToIconMode.All"
-        CollapseItemsToHamburgerMenu="true"
-        CssClass="navbar">
-
-    <TitleTemplate>
-        <div class="icon-logo" role="img" aria-label="@context"></div>
-    </TitleTemplate>
-
-    <Items>
-        <DxMenuItem Text="My Profile" title="My Profile" NavigateUrl="/loggedStudent" CssClass="notoggle" IconCssClass="menu-icon-user-profile menu-icon" Name="MyProfile" Position="ItemPosition.End" />
-    </Items>
-
-    <Items>
-        <DxMenuItem Text="Log out" title="Log out" NavigateUrl="/login" CssClass="notoggle" IconCssClass="menu-icon-user-profile menu-icon" Name="LogOut" Position="ItemPosition.End" />
-    </Items>
-</DxMenu>
- *@
 
 <DxMenu Orientation="Orientation.Horizontal"
         DisplayMode="MenuDisplayMode.Desktop"
-        Title="NavBar Logo"
+        Title="E-student"
         CollapseItemToIconMode="MenuCollapseItemToIconMode.All"
         CollapseItemsToHamburgerMenu="true"
         CssClass="navbar">
     <Items>
-        <DxMenuItem Text="Home" IconCssClass="menu-icon-home menu-icon">
+        <DxMenuItem Text="Home" title="Home" NavigateUrl="/personal-profile" CssClass="notoggle" IconCssClass="menu-icon-home menu-icon">
         </DxMenuItem>
-        <DxMenuItem Text="Item2">
+        <DxMenuItem Text="My profile" title="My profile" NavigateUrl="/profile" CssClass="notoggle" IconCssClass="menu-icon-user menu-icon">
+        </DxMenuItem>
+        <DxMenuItem Text="Courses" title="Courses" NavigateUrl="/courses" CssClass="notoggle" IconCssClass="menu-icon menu-icon">
         </DxMenuItem>
         <DxMenuItem CssClass="notoggle" Position="ItemPosition.End">
             <TextTemplate>
-                <div class="menu-icon-user-profile menu-icon" /> 
+                <div class="menu-icon-user-profile menu-icon" />
             </TextTemplate>
             <SubMenuTemplate>
                 <div class="w-100 user-profile">
@@ -47,8 +30,8 @@
                             <div class="menu-icon-user-profile menu-icon menu-icon-large" />
                         </div>
                         <div class="user-name-container bm-3 mb-2">
-                            <div class="tm08 text-center"> Hello, </div>
-                            <div class="text-center"> @* ketu do te vendosim username ne baze te atij te loguar *@ User </div>
+                            <div class="tm08 text-center"> Hello, @* @StudentRepository.GetCurrentUsersName *@ @* TODO:to be fixed *@  </div>
+                            <div class="text-center"> User </div>
                         </div>
                         <div class="d-flex justify-content-center log-off-button">
                             <DxButton Text="Log out" RenderStyle="@ButtonRenderStyle.Secondary" NavigateUrl="/login"></DxButton>
