@@ -9,6 +9,7 @@ namespace StudentsManagement.BLL.Repository.Implementation;
 public class StudentRepository : IStudentRepository
 {
     private readonly StudentsManagementContext context;
+    public string Username { get; set; }
 
     public StudentRepository(StudentsManagementContext context)
     {
@@ -42,6 +43,13 @@ public class StudentRepository : IStudentRepository
     {
         var allStudents = await context.Students.ToListAsync();
         return allStudents;
+    }
+
+    public string GetCurrentUsersName(StudentLogin_DTO studentLogin)
+    {
+        var student = context.Students.FirstOrDefault(x => x.Email == studentLogin.Email && x.Password == studentLogin.Password);
+        Username = studentLogin.Email;
+        return Username;
     }
 
     public bool GetStudentByPhoneNumber(string phoneNumber)

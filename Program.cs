@@ -14,6 +14,7 @@ builder.Services.AddDbContext<StudentsManagementContext>(options =>
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddTransient<IStudentRepository, StudentRepository>();
+builder.Services.AddTransient<ISubjectRepository, SubjectRepository>();
 
 builder.Services.AddDevExpressBlazor();
 

@@ -12,4 +12,5 @@ public interface IStudentRepository
     Task<Student_DTO> DeleteStudentAsync(Student_DTO student);
     Task<Student_DTO> FindAsync(string phoneNumber);
     public Task<bool> Login(StudentLogin_DTO studentLogin);
+    string GetCurrentUsersName(StudentLogin_DTO studentLogin);
 }
