@@ -1,0 +1,27 @@
+﻿@* <div class="card-body">
+    <DxFormLayout Data="@editFormData"
+                  ItemUpdating="@((pair) => OnItemUpdating(pair.Key, pair.Value))"
+                  CssClass="w-100">
+        <DxFormLayoutItem Field="@nameof(FormDataItem.Name)"
+                          Caption="Name: " />
+        <DxFormLayoutItem Field="@nameof(FormDataItem.LastName)"
+                          Caption="Last name: " />
+        <DxFormLayoutItem Field="@nameof(FormDataItem.DateOfBirth)"
+                          Caption="Date of birth: " />
+        <DxFormLayoutItem Field="@nameof(FormDataItem.Gender)"
+                          Caption="Gender: " />
+        <DxFormLayoutItem Field="@nameof(FormDataItem.Email)"
+                          Caption="Email: " />
+        <DxFormLayoutItem Field="@nameof(FormDataItem.PhoneNumber)"
+                          Caption="Phone number: " />
+        <DxFormLayoutItem Field="@nameof(FormDataItem.StudentYear)"
+                          Caption="Student year: " />
+        <DxFormLayoutItem Field="@nameof(FormDataItem.RegistrationYear)"
+                          Caption="Registration year: " />
+        <DxFormLayoutItem Field="@nameof(FormDataItem.Password)"
+                          Caption="Password: " />
+        <DxFormLayoutItem Field="@nameof(FormDataItem.Password)"
+                          Caption="Password: " />
+    </DxFormLayout>
+</div>
+ *@
